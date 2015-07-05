@@ -1,4 +1,4 @@
-### Column Definitions
+### Column Definition
 
 http://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/TableDefinition.html
 
