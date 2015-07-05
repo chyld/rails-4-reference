@@ -22,3 +22,7 @@ http://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/TableDefiniti
 - :precision
 - :scale
 - :index
+
+### Aliases
+- :timestamps
+- :references
