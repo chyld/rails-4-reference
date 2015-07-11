@@ -1,4 +1,4 @@
-# debugging
+### debugging
 
-* byebug
-* <%= console %>
+* `byebug`
+* `<%= console %>`
