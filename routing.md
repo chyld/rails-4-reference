@@ -3,21 +3,22 @@
 http://api.rubyonrails.org/classes/ActionDispatch/Routing.html
 
 ```ruby
-resources :photos
-
-resources :magazines do
-  resources :ads
+Rails.application.routes.draw do
+  root 'home#index'
+  get '/hydrogen/:x/:y', to: 'home#hydrogen', as: 'h'
+  post '/helium', to: 'home#helium', as: 'he'
+  namespace :beryllium do
+    resources :users do
+      resources :tracks
+      member do
+        get 'eat'
+        post 'run'
+      end
+      collection do
+        put 'gather'
+        patch 'follow'
+      end
+    end
+  end
 end
-
-namespace "admin" do
-  resources :posts, :comments
-end
-
-scope path: "/cpanel", as: 'admin' do
-  resources :posts, :comments
-end
-
-get 'post/:id' => 'posts#show'
-post 'post/:id' => 'posts#create_comment'
-match 'post/:id' => 'posts#show', via: [:get, :post]
 ```
