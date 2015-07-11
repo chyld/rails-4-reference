@@ -4,6 +4,7 @@ http://api.rubyonrails.org/classes/ActionDispatch/Routing.html
 
 ```ruby
 Rails.application.routes.draw do
+
   root 'home#index'
   get '/hydrogen/:x/:y', to: 'home#hydrogen', as: 'h'
   post '/helium', to: 'home#helium', as: 'he'
@@ -20,5 +21,12 @@ Rails.application.routes.draw do
       end
     end
   end
+  
+  scope path: "/cpanel", as: 'admin' do
+    resources :posts, :comments
+  end
+
+  match 'post/:id' => 'posts#show', via: [:get, :post]
+
 end
 ```
