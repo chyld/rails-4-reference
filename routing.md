@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/hydrogen/:x/:y', to: 'home#hydrogen', as: 'h'
   post '/helium', to: 'home#helium', as: 'he'
-  namespace :beryllium do
-    resources :users do
+  namespace :beryllium, only: [:show] do
+    resources :users, except: [:new, :destroy] do
       resources :tracks
       member do
         get 'eat'
