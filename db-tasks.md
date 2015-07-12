@@ -2,6 +2,10 @@
 
 
 ```sh
+bin/rake db:migrate VERSION=20080906120000
+bin/rake db:rollback STEP=3
+bin/rake db:migrate:redo STEP=3
+
 rake db:create                          # Creates the database from DATABASE_URL or config/datab...
 rake db:drop                            # Drops the database from DATABASE_URL or config/databas...
 rake db:fixtures:load                   # Load fixtures into the current environment's database
